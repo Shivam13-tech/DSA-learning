@@ -107,6 +107,7 @@ class LengthofLL:
         while temp is not None:
             print(temp.value)
             temp = temp.next
+            return True
 
 
     def append(self,value):
