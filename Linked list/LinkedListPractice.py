@@ -79,8 +79,34 @@ class LengthofLL:
             temp = temp.next
         return True
 
-            
+    def removeduplicate(self):
+        temp = self.head
+        while temp is not None and temp.next is not None:
+            if temp.value == temp.next.value:
+                temp.next = temp.next.next
+            else:
+                temp = temp.next
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
 
+    def remove_duplicates_unsorted(self):
+        stored_nodes = set()
+        temp = self.head
+        pre = None
+        while temp is not None:
+            if temp.value in stored_nodes:
+                pre.next = temp.next
+                temp = None
+            else:
+                stored_nodes.add(temp.value)
+                pre = temp
+            temp = pre.next
+        temp = self.head
+        while temp is not None:
+            print(temp.value)
+            temp = temp.next
 
 
     def append(self,value):
@@ -94,11 +120,14 @@ class LengthofLL:
         self.length += 1
         return True
 
-my_linked_list = LengthofLL(1)
-my_linked_list.append(2)
-my_linked_list.append(3)
-my_linked_list.append(2)
-my_linked_list.append(2)
-print(my_linked_list.pallindromsecond())
+my_linked_list = LengthofLL(12)
+my_linked_list.append(11)
+my_linked_list.append(12)
+my_linked_list.append(21)
+my_linked_list.append(41)
+my_linked_list.append(43)
+my_linked_list.append(21)
+print(my_linked_list.remove_duplicates_unsorted())
+# print(my_linked_list.pallindromsecond())
 # print(my_linked_list.number_of_nodes())
 # print(my_linked_list.looping())
