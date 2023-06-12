@@ -30,6 +30,13 @@ class stack():
                 print(' ', end='')
         while stack:
             print(stack.pop(),end='')
+
+    def reversesinglestring(self,str):
+        new_stack = []
+        for char in str:
+            new_stack.append(char)
+        while new_stack:
+            print(new_stack.pop())
         
 
         
@@ -37,4 +44,5 @@ class stack():
 
 my_stack = stack(4)
 # my_stack.print_stack()
-my_stack.reversestring("Hello World")
+# my_stack.reversestring("Hello World")
+my_stack.reversesinglestring("GeeksQuiz")
